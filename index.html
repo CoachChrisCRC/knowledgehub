@@ -137,7 +137,16 @@
             <p class="mt-2 text-sm font-semibold text-gray-600">#FITTER #STRONGER<br>#BETTER</p>
         </div>
         <p class="text-center text-gray-700 text-base mb-8">This is your definitive reference for all the <strong class="font-bold text-gray-900">science-backed strategies</strong> needed to support your training & nutrition, broaden your knowledge, optimize recovery, and make meaningful change to help you achieve your fitness goals.</p>
+        
+        <div class="mb-8">
+            <div class="relative">
+                <input type="text" id="search-input" onkeyup="searchKnowledgeBase()" placeholder="Search articles (e.g., 'creatine', 'cortisol', 'sleep')" class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg text-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-150 text-gray-900">
+                <i data-lucide="search" class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"></i>
+            </div>
+            <div id="search-results-container" class="mt-4 space-y-2"></div>
+        </div>
         <h2 class="text-2xl font-bold text-gray-900 mb-6">Master the Fundamentals:</h2>
+        
         <div class="space-y-4">
             <div onclick="openModal('nutrition')" class="card-category p-4 rounded-xl cursor-pointer">
                 <div class="mb-2"><i data-lucide="apple" class="w-6 h-6 mr-2 inline-block text-gray-900 align-middle"></i><h3 class="font-extrabold text-xl inline-block align-middle">Nutrition & Fueling:</h3></div>
@@ -338,59 +347,6 @@
                         content: `<p class="font-bold text-lg text-gray-900 border-b border-gray-200 pb-2 mb-3">TLDR Summary:</p><p class="mb-4 text-gray-600">(**Mindfulness in Eating**) means paying full attention to your meal, which allows your body's satiety hormones (like leptin) to signal the brain that you are full. Eating slowly and without distraction is a simple tool to naturally reduce overconsumption.</p><p>It takes approximately (**20 minutes**) for the hormonal cascade of fullness to register in your brain. If you eat quickly while distracted (e.g., watching TV or working), you can easily consume hundreds of excess calories before your body catches up.</p><p class="mt-3">(**Practical Tips for Mindful Eating:**)</p><ul class="list-disc list-inside ml-4 space-y-1"><li>(**Eliminate Distractions:**) Do not eat in front of a screen (phone, TV, computer).</li><li>(**Chew Thoroughly:**) Focus on the texture and flavor of the food. Aim for 20-30 chews per bite.</li><li>(**The Fork Down Rule:**) Put your fork down entirely between every single bite.</li><li>(**Pause Mid-Meal:**) Take a 2-minute break halfway through your plate to assess your hunger level (Am I full? Am I satisfied?).</li></ul><p class="mt-3">This practice improves digestion and is a powerful behavioral tool for effortless calorie management.</p>`
                     }, {
                         title: "15. Managing the All-or-Nothing Trap",
-                        content: `<p class="font-bold text-lg text-gray-900 border-b border-gray-200 pb-2 mb-3">TLDR Summary:</p><p class="mb-4 text-gray-600">The (**All-or-Nothing Trap**) is a form of perfectionism that causes people to spiral after a single mistake (e.g., "My diet is ruined, so I'll binge"). (**Consistency, not perfection**), drives results. Your goal is always (**damage control**) and quick re-entry to the plan.</p><p>Fitness is not a pass/fail exam; it's a long-term compound interest curve. One high-calorie meal will not derail six months of progress, but letting that single mistake turn into a "bad week" will. This trap relies on the emotional, not the logical, side of your brain.</p><p class="mt-3">(**How to Escape the Trap:**)</p><ul class="list-disc list-inside ml-4 space-y-1"><li>(**Mitigation:**) If a meal is unavoidable (e.g., a huge wedding dinner), treat the rest of the day perfectly (e.g., track food, hit your protein, drink water). Don't let the one meal justify a day of poor choices.</li><li>(**The Next Meal:**) If you overate at lunch, your next meal is perfectly on plan. You reset immediately. You do not wait until Monday or "the next diet."</li><li>(**Focus on Totals:**) Your body runs on weekly averages. A slight daily deviation is easily smoothed out by perfect adherence the next day.</li></ul>`
-                    }
-                ]
-            },
-            habits: {
-                title: "Habits & Mindset:",
-                type: "accordion",
-                articles: [
-                    // ... (rest of habits articles)
-                    {
-                        title: "1. SMART Goals: Making Your Wishes Actionable",
-                        content: `<p class="font-bold text-lg text-gray-900 border-b border-gray-200 pb-2 mb-3">TLDR Summary:</p><p class="mb-4 text-gray-600">The (**SMART**) framework ((**S**pecific, **M**easurable, **A**chievable, **R**elevant, **T**ime-bound)) converts vague aspirations into a concrete, trackable roadmap, significantly increasing your likelihood of success.</p><p>A goal like "I want to get fit" is too vague to act on. The SMART methodology provides the necessary structure to turn ambition into a daily process:</p><ul class="list-disc list-inside ml-4 space-y-2 mt-3"><li>(**S - Specific:**) Instead of "I want to lose weight," define "I want to lose 10 lbs of body fat."</li><li>(**M - Measurable:**) Instead of "I want to get stronger," define "I want to deadlift 1.5x my bodyweight."</li><li>(**A - Achievable:**) The goal must be realistic for your timeline and circumstances. A goal too high leads to demotivation.</li><li>(**R - Relevant:**) The goal must align with your broader life values. (E.g., "I want to be fit enough to play with my kids.")</li><li>(**T - Time-bound:**) Set a deadline: "I will achieve this by the end of Q2." Deadlines create necessary urgency and focus.</li></ul><p class="mt-3">Always break down your big SMART goal into small, daily SMART actions (e.g., "I will track every meal today").</p>`
-                    }, {
-                        title: "2. Identity-Based Habits: Who You Are Becoming",
-                        content: `<p class="font-bold text-lg text-gray-900 border-b border-gray-200 pb-2 mb-3">TLDR Summary:</p><p class="mb-4 text-gray-600">The deepest and most sustainable form of change is (**Identity-Based**). Focus on becoming the (**type of person**) who achieves your goals (e.g., "I am an athlete who prioritizes recovery") rather than just the outcome.</p><p>Behavior change can be viewed in three layers: (**Outcomes**) (lose 10 lbs), (**Processes**) (meal prep every Sunday), and (**Identity**) (The Beliefs you hold). If you focus only on the outcome, the goal disappears once reached. If you change your identity, the behavior becomes automatic.</p><p class="mt-3">(**Voting for Your Identity:**) Every small action is a "vote" for the person you want to become. Choosing to track your food is a vote for "I am a disciplined tracker." Choosing to drink water over soda is a vote for "I am a person who values health."</p><p class="mt-3">(**Simple Shift:**) When faced with a choice, ask yourself, "What would a disciplined, strong person do in this situation?" Then, do that.</p>`
-                    }, {
-                        title: "3. Setting Up Your Success Zone (Environmental Design)",
-                        content: `<p class="font-bold text-lg text-gray-900 border-b border-gray-200 pb-2 mb-3">TLDR Summary:</p><p class="mb-4 text-gray-600">Your (**environment is more powerful than willpower**). Design your surroundings to make desired behaviors obvious and easy, and undesirable behaviors invisible and difficult.</p><p>Relying on willpower is unsustainable; it’s a finite resource. By controlling the cues in your environment, you automate the decision-making process. This is the difference between fighting temptation and eliminating it.</p><p class="mt-3">(**Making Good Habits Easy:**)</p><ul class="list-disc list-inside ml-4 space-y-1"><li>(**Preparation:**) Lay your gym clothes out the night before, or pack your lunch right after dinner. This reduces the friction of starting.</li><li>(**Visibility:**) Keep healthy protein bars or a water bottle in plain sight.</li></ul><p class="mt-3">(**Making Bad Habits Difficult:**)</p><ul class="list-disc list-inside ml-4 space-y-1"><li>(**Invisibility:**) Store tempting treats in an opaque, hard-to-reach spot, or better yet, don't buy them.</li><li>(**Friction:**) If you habitually watch TV, take the batteries out of the remote and store them far away to add a moment of friction to the undesired habit.</li></ul>`
-                    }, {
-                        title: "4. Stress and Fat Loss: The Cortisol Connection",
-                        content: `<p class="font-bold text-lg text-gray-900 border-b border-gray-200 pb-2 mb-3">TLDR Summary:</p><p class="mb-4 text-gray-600">Chronic, non-training stress elevates the hormone (**Cortisol**). High cortisol disrupts sleep, increases appetite for sugary foods, and promotes the storage of (**visceral fat**)—making fat loss more difficult even in a calorie deficit. Actively manage your stress.</p><p>Cortisol is the body’s primary stress hormone, part of the 'fight-or-flight' response. In short bursts (like during a heavy set), it's useful. Chronically elevated (from work, financial, or relationship stress), it becomes a metabolic roadblock.</p><p class="mt-3">(**Cortisol's Impact on Metabolism:**)</p><ul class="list-disc list-inside ml-4 space-y-1"><li>(**Appetite Regulation:**) High cortisol can lead to the overproduction of ghrelin (the hunger hormone) and resistance to leptin (the satiety hormone).</li><li>(**Fat Storage:**) It specifically encourages the body to store fat centrally around the organs (visceral fat), which is the most dangerous type.</li></ul><p class="mt-3">(**Interventions:**) Treat stress management as a workout. Incorporate non-caloric activities like (**5-10 minutes of deep breathing**), daily light walks (LISS), reading, or journaling to signal to your body that it is safe to down-regulate.</p>`
-                    }, {
-                        title: "5. Reframing Setbacks: The Growth Mindset",
-                        content: `<p class="font-bold text-lg text-gray-900 border-b border-gray-200 pb-2 mb-3">TLDR Summary:</p><p class="mb-4 text-gray-600">Adopt a (**Growth Mindset**) where a setback (a missed workout, a bad meal) is viewed as (**data for adjustment**), not a permanent failure. The single most important rule is: (**Never Miss Twice**).</p><p>People often fall into the (**All-or-Nothing Trap**): they believe if they can't be perfect, they shouldn't try at all. This is driven by a Fixed Mindset that believes abilities and willpower are static.</p><p class="mt-3">(**The Power of the Pivot:**) A person with a Growth Mindset views the world differently. When a setback occurs, they ask, "What was the trigger? What system failed? How can I adjust for next time?" This makes failure a valuable learning opportunity.</p><p class="mt-3">(**The 'Never Miss Twice' Rule:**) If you miss a workout, or have a poor tracking day, ensure you are back on track for the very next meal or session. One lapse is a mistake; two lapses begin a new, negative habit pattern.</p>`
-                    }, {
-                        title: "6. Non-Scale Victories (NSVs): Tracking Real Progress",
-                        content: `<p class="font-bold text-lg text-gray-900 border-b border-gray-200 pb-2 mb-3">TLDR Summary:</p><p class="mb-4 text-gray-600">(**Non-Scale Victories (NSVs)**) are qualitative measures of success (e.g., energy, strength, clothing fit) that often provide motivation and momentum long before the scale moves. They track the (**functional benefits**) of your hard work.</p><p>The scale is an imperfect tool because of water fluctuations, muscle growth, and hormonal cycles. Relying solely on it can be frustrating and misleading. NSVs are critical for maintaining mental health and acknowledging the positive changes happening inside your body.</p><p class="mt-3">(**Types of NSVs to Track:**)</p><ul class="list-disc list-inside ml-4 space-y-1"><li>(**Performance:**) Lifting a new weight, performing more reps, or shaving time off a cardio session.</li><li>(**Physical/Aesthetic:**) Clothes fitting looser, improved posture, better skin clarity.</li><li>(**Health/Energy:**) Waking up without an alarm, higher sustained energy in the afternoon, no midday brain fog.</li><li>(**Mental:**) Improved patience, reduced anxiety, better mood stability.</li></ul><p class="mt-3">Reviewing your NSVs weekly reminds you that the process is working, regardless of daily scale readings.</p>`
-                    }, {
-                        title: "7. Habit Stacking: Linking New Habits to Old Ones",
-                        content: `<p class="font-bold text-lg text-gray-900 border-b border-gray-200 pb-2 mb-3">TLDR Summary:</p><p class="mb-4 text-gray-600">(**Habit Stacking**) is a powerful behavioral tool that anchors a (**new habit**) to an existing, automatic one, minimizing the need for conscious effort. Use the formula: (**"After [CURRENT HABIT], I will [NEW HABIT]."**)</p><p>When you perform an existing habit (e.g., brushing your teeth), a neural pathway in your brain is already activated. By immediately performing the new habit, you are "stacking" it onto that pre-existing pathway, making it easier to adopt.</p><p class="mt-3">(**Actionable Habit Stacks:**)</p><ul class="list-disc list-inside ml-4 space-y-1"><li>(**Nutrition:**) "After I take my last bite of dinner (current), I will log my food for the day (new)."</li><li>(**Training:**) "After I put my work bag down when I get home (current), I will put on my gym clothes (new)."</li><li>(**Recovery:**) "After I turn off the kitchen light (current), I will perform 5 minutes of deep breathing (new)."</li></ul><p class="mt-3">The simpler and more specific the stack, the more likely you are to succeed. Avoid ambiguous current habits.</p>`
-                    }, {
-                        title: "8. Finding Your Deep 'Why' (Intrinsic Motivation)",
-                        content: `<p class="font-bold text-lg text-gray-900 border-b border-gray-200 pb-2 mb-3">TLDR Summary:</p><p class="mb-4 text-gray-600">Identify your (**Intrinsic Motivation**)—the deep, personal reason for change (e.g., self-respect, health span, energy). This deep 'Why' is your emotional fuel tank that resists burnout when temporary (**Extrinsic Motivation**) (e.g., vacation looks) runs out.</p><p>Extrinsic motivators are fragile because they disappear once the short-term goal is met. Intrinsic motivation is durable because it is tied to your self-concept and long-term quality of life.</p><p class="mt-3">(**The 'Five Whys' Method:**) To find your deep 'Why,' start with your surface goal and ask "Why is that important?" five times in a row. You will eventually get to your core values (e.g., Surface: "I want to lose 10 lbs." -> Core: "So I can maintain my independence and mobility into my 80s to be present for my grandkids.")</p><p class="mt-3">(**Application:**) Write your deep 'Why' down and put it somewhere visible (e.g., phone background, fridge). When you feel low on motivation, read it to reconnect with your purpose.</p>`
-                    }, {
-                        title: "9. Mastering Sleep Hygiene for Recovery",
-                        content: `<p class="font-bold text-lg text-gray-900 border-b border-gray-200 pb-2 mb-3">TLDR Summary:</p><p class="mb-4 text-gray-600">(**Sleep Hygiene**) is the set of practices that promote high-quality, restorative sleep (7-9 hours), maximizing physical recovery, hormonal regulation, and cognitive function. Consistency is the most powerful tool.</p><p>Your quality of sleep directly dictates your ability to lift heavy, focus on your diet, and manage stress the next day. A few key practices can dramatically improve your sleep: </p><p class="mt-3">(**The Three Pillars of Sleep Hygiene:**)</p><ul class="list-disc list-inside ml-4 space-y-1"><li>(**1. Consistency:**) Go to bed and wake up at the same time every day, even on weekends. This stabilizes your (**circadian rhythm**) (your internal clock).</li><li>(**2. Environment:**) Keep your room (**Dark, Cool, and Quiet**). The optimal temperature for sleep is generally between 60–67°F (15–19°C).</li><li>(**3. Routine:**) Create a 30-minute wind-down ritual that avoids bright screens (blue light) and intense work/conversations. Try reading or light stretching instead.</li></ul>`
-                    }, {
-                        title: "10. The Power of Accountability and Feedback",
-                        content: `<p class="font-bold text-lg text-gray-900 border-b border-gray-200 pb-2 mb-3">TLDR Summary:</p><p class="mb-4 text-gray-600">(**Accountability**) (reporting to a coach/partner) turns intentions into action by creating a commitment mechanism. (**Feedback**) (tracked data) provides objective, non-emotional insight into what is working and what needs immediate adjustment.</p><p>Most goals fail not due to lack of knowledge, but lack of execution. Accountability helps close the gap between knowing what to do and actually doing it. You perform differently when you know someone is watching or expecting a check-in (The (**Hawthorne Effect**)).</p><p class="mt-3">(**Tracking is Feedback:**) Logging your food, workouts, and sleep isn't about judgment; it's the raw data you need to make intelligent decisions. If you hit a plateau, you can look at the data and immediately see where the consistency slipped (e.g., protein intake dropped, or sleep was below 6 hours).</p><p class="mt-3">(**Commitment Strategy:**) Publicly declaring your goal (even just to your coach) significantly increases your psychological commitment to follow through.</p>`
-                    }, {
-                        title: "11. Dealing with the Plateau: When Progress Stops",
-                        content: `<p class="font-bold text-lg text-gray-900 border-b border-gray-200 pb-2 mb-3">TLDR Summary:</p><p class="mb-4 text-gray-600">A (**plateau**) means your body has fully adapted to the current stimulus. Break it by conducting a strict (**Adherence Audit**), implementing a planned (**Deload**), or changing your (**Training Stimulus**) (introducing a new exercise or rep range).</p><p>Plateaus are normal and inevitable. They are a signal to change your strategy, not abandon it. Always approach a plateau with a systematic audit:</p><ul class="list-disc list-inside ml-4 space-y-1"><li>(**1. Adherence Audit (Nutrition/Sleep):**) Are you truly in a consistent calorie deficit? Are you getting 7+ hours of quality sleep? Ninety percent of plateaus are fixed here.</li><li>(**2. Deload:**) Take a planned deload week to allow your CNS to fully recharge (see Article 9 in Training).</li><li>(**3. Change Stimulus:**) Introduce a new method of Progressive Overload (e.g., switch from barbells to dumbbells, or change your 8-rep sets to 5-rep sets for a block).</li></ul><p class="mt-3">Do not try to power through a plateau by just adding more volume; this usually leads to injury or burnout.</p>`
-                    }, {
-                        title: "12. Motivation is Overrated: Discipline is the Key",
-                        content: `<p class="font-bold text-lg text-gray-900 border-b border-gray-200 pb-2 mb-3">TLDR Summary:</p><p class="mb-4 text-gray-600">(**Motivation is an emotion**)—it is unreliable and fleeting. (**Discipline is the action**) you take regardless of how you feel. Success is built on robust (**systems**) and discipline, not waiting for a feeling of motivation to strike.</p><p>The myth of the perpetually motivated athlete is false. Top performers have built simple, repeatable systems that make showing up non-negotiable, even on days when they are tired or unenthusiastic.</p><p class="mt-3">(**Building Your System:**)</p><ul class="list-disc list-inside ml-4 space-y-1"><li>(**Minimize Decision Points:**) If you decide *when* you train, *where* you train, and *what* you eat every single day, you will fail. Decide once (e.g., "I train at 6 PM on M/W/F") and stick to the system.</li><li>(**Lower the Barrier:**) On a day where you have zero motivation, make your task tiny: "I will just put on my shoes and drive to the gym." Once you are there, the inertia of starting the workout often takes over.</li></ul><p class="mt-3">Discipline is like a muscle: the more you use it to adhere to your system, the stronger it becomes.</p>`
-                    }, {
-                        title: "13. Visualizing Success (Mental Repetition)",
-                        content: `<p class="font-bold text-lg text-gray-900 border-b border-gray-200 pb-2 mb-3">TLDR Summary:</p><p class="mb-4 text-gray-600">(**Visualization**) (mental rehearsal) activates the same neural pathways as physical execution, improving your (**motor control**) and confidence. Use it before difficult lifts to prime your nervous system for success.</p><p>Mental practice is a powerful, zero-fatigue tool. By closing your eyes and vividly imagining a perfect repetition—feeling the weight, hearing the sound of the plates, seeing the perfect bar path—you are effectively training your nervous system without physical strain.</p><p class="mt-3">(**Application in Training:**)</p><ul class="list-disc list-inside ml-4 space-y-1"><li>(**Before a PR Attempt:**) Take 60 seconds. Imagine the walk-out, the moment you take a big breath, the controlled descent, the powerful drive up, and the successful racking of the weight.</li><li>(**For Technique:**) If you are struggling with a complex movement (e.g., RDLs), use visualization to mentally practice the perfect hinge pattern before you pick up the weight.</li></ul><p class="mt-3">This psychological preparation reduces performance anxiety and enhances your mind-muscle connection, making success in the gym much more likely.</p>`
-                    }, {
-                        title: "14. Mindfulness in Eating: Slowing Down for Satiety",
-                        content: `<p class="font-bold text-lg text-gray-900 border-b border-gray-200 pb-2 mb-3">TLDR Summary:</p><p class="mb-4 text-gray-600">(**Mindfulness in Eating**) means paying full attention to your meal, which allows your body's satiety hormones (like leptin) to signal the brain that you are full. Eating slowly and without distraction is a simple tool to naturally reduce overconsumption.</p><p>It takes approximately (**20 minutes**) for the hormonal cascade of fullness to register in your brain. If you eat quickly while distracted (e.g., watching TV or working), you can easily consume hundreds of excess calories before your body catches up.</p><p class="mt-3">(**Practical Tips for Mindful Eating:**)</p><ul class="list-disc list-inside ml-4 space-y-1"><li>(**Eliminate Distractions:**) Do not eat in front of a screen (phone, TV, computer).</li><li>(**Chew Thoroughly:**) Focus on the texture and flavor of the food. Aim for 20-30 chews per bite.</li><li>(**The Fork Down Rule:**) Put your fork down entirely between every single bite.</li><li>(**Pause Mid-Meal:**) Take a 2-minute break halfway through your plate to assess your hunger level (Am I full? Am I satisfied?).</li></ul><p class="mt-3">This practice improves digestion and is a powerful behavioral tool for effortless calorie management.</p>`
-                    }, {
-                        title: "15. Managing the All-or-Nothing Trap",
                         content: `<p class="font-bold text-lg text-gray-900 border-b border-gray-200 pb-2 mb-3">TLDR Summary:</p><p class="mb-4 text-gray-600">The (**All-or-Nothing Trap**) is a form of perfectionism that causes people to spiral after a single mistake (e.g., "My diet is ruined, so I'll binge"). (**Consistency, not perfection**), drives results. Your goal is always (**damage control**) and quick re-entry to the plan.</p><p>Fitness is not a pass/fail exam; it's a long-term compound interest curve. One high-calorie meal will not derail six months of progress, but letting that single mistake turn into a "bad week" will. This trap relies on the emotional, not the logical, side of your brain.</p><p class="mt-3">(**How to Escape the Trap:**)</p><ul class="list-disc list-inside ml-4 space-y-1"><li>(**Mitigation:**) If a meal is unavoidable (e.g., a huge wedding dinner), treat the rest of the day perfectly (e.g., track food, hit your protein, drink water). Don't let the one meal justify a day of poor choices.</li><li>(**The Next Meal:**) If you overate at lunch, your next meal is perfectly on plan. You reset immediately. You do not wait until Monday or "the next diet."</li><li>(**Focus on Totals:**) Your body runs on weekly averages. A slight daily deviation is easily smoothed out by perfect adherence the next day.</li></li></ul>`
                     }
                 ]
@@ -430,8 +386,6 @@
             modalDetails.innerHTML = '';
 
             if (item.type === 'simple') {
-                // For simple content types, you might also want to process the text if applicable, 
-                // but based on your data structure, it looks like only 'accordion' content uses (**...**).
                 modalDetails.innerHTML = item.details; 
             } else if (item.type === 'accordion' && item.articles) {
                 const accordionHtml = renderAccordion(categoryKey, item.articles);
@@ -545,6 +499,108 @@
                     toggleSidebar();
                 }
             }
+        }
+        
+        /**
+         * Searches the knowledgeCategories for articles matching the search query
+         * @param {string} query The search string from the input field
+         * @returns {Array<Object>} An array of matching articles with their category.
+         */
+        function searchKnowledgeBase() {
+            const input = document.getElementById('search-input');
+            const query = input.value.toLowerCase().trim();
+            const resultsContainer = document.getElementById('search-results-container');
+            // Select the container for the original three category cards
+            const categoryCards = document.querySelector('.space-y-4'); 
+
+            resultsContainer.innerHTML = ''; // Clear previous results
+
+            if (query.length < 3) {
+                // Hide the results and show the category cards if the query is too short or empty
+                categoryCards.classList.remove('hidden');
+                return;
+            }
+
+            const results = [];
+            // Iterate through each main category (nutrition, training, habits)
+            for (const categoryKey in knowledgeCategories) {
+                const category = knowledgeCategories[categoryKey];
+                
+                // Only search through categories with articles (accordion type)
+                if (category.type === 'accordion' && category.articles) {
+                    category.articles.forEach((article, index) => {
+                        const title = article.title.toLowerCase();
+                        // Search the raw content before processing the custom bold syntax
+                        const content = article.content.toLowerCase(); 
+
+                        // Check if the query is in the title or the content
+                        if (title.includes(query) || content.includes(query)) {
+                            results.push({
+                                categoryKey: categoryKey,
+                                categoryTitle: category.title.replace(':', ''),
+                                title: article.title,
+                                articleIndex: index // We need this to open the correct article later
+                            });
+                        }
+                    });
+                }
+            }
+            
+            // Display Results
+            if (results.length > 0) {
+                categoryCards.classList.add('hidden'); // Hide the main category cards
+                
+                results.forEach(result => {
+                    const resultDiv = document.createElement('div');
+                    // Changed card-category styling slightly for search results to differentiate 
+                    resultDiv.className = 'card-category p-4 rounded-xl cursor-pointer flex justify-between items-center text-left hover:border-blue-500 border-2 border-transparent';
+                    resultDiv.onclick = () => openSpecificArticle(result.categoryKey, result.articleIndex);
+                    
+                    resultDiv.innerHTML = `
+                        <div>
+                            <p class="text-xs font-semibold uppercase text-blue-600 mb-1">${result.categoryTitle}</p>
+                            <h3 class="font-bold text-lg text-gray-900 leading-snug">${result.title}</h3>
+                        </div>
+                        <i data-lucide="chevron-right" class="w-5 h-5 text-gray-500 flex-shrink-0 ml-4"></i>
+                    `;
+                    resultsContainer.appendChild(resultDiv);
+                });
+                lucide.createIcons(); // Re-render Lucide icons for the results
+            } else {
+                // Show a 'no results' message
+                categoryCards.classList.add('hidden');
+                resultsContainer.innerHTML = `<p class="text-center text-gray-500 mt-4 italic">No articles found matching "${query}". Try a different keyword.</p>`;
+            }
+        }
+        
+        /**
+         * Opens the modal to a specific article and automatically expands its accordion.
+         * @param {string} categoryKey The key of the category (e.g., 'nutrition').
+         * @param {number} articleIndex The index of the article in the category's array.
+         */
+        function openSpecificArticle(categoryKey, articleIndex) {
+            // 1. Open the modal for the given category
+            openModal(categoryKey); 
+            
+            // 2. Wait for the modal transition to start (300ms is the CSS transition duration)
+            setTimeout(() => {
+                const uniqueId = `${categoryKey}-${articleIndex}`;
+                const header = document.getElementById(`header-${uniqueId}`);
+                
+                // 3. Scroll to the header and toggle the accordion open
+                if (header) {
+                    // Use toggleAccordion to open the correct article
+                    toggleAccordion(uniqueId); 
+                    
+                    // A second, slightly delayed scroll to ensure it's in view after the expansion animation
+                    setTimeout(() => {
+                        header.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center' // Center it for better visibility
+                        });
+                    }, 350);
+                }
+            }, 350); 
         }
 
         function initializeApp() {
